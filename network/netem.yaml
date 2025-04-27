@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: network-emulation
+spec:
+  action: netem
+  mode: all
+  selector:
+    namespaces:
+      - dev-stable
+    labelSelectors:
+      'app': 'dev-stable'
+      'pod-template-hash': '748d6d8ccd-'
+  loss:
+    loss: '30'
+    correlation: '30'
