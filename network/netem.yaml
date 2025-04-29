@@ -4,7 +4,7 @@ metadata:
   name: network-emulation
 spec:
   action: netem
-  mode: all
+  mode: loss
   selector:
     namespaces:
       - dev-stable
@@ -14,4 +14,4 @@ spec:
       'metadata.name': 'producer-pod-<id>'
   loss:
     loss: '30'
-    correlation: '30'
+    correlation: '10'
