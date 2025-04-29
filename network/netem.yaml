@@ -10,7 +10,8 @@ spec:
       - dev-stable
     labelSelectors:
       'app': 'dev-stable'
-      'pod-template-hash': '748d6d8ccd-'
+    fieldSelectors:
+      'metadata.name': 'producer-pod-<id>'
   loss:
     loss: '30'
     correlation: '30'
